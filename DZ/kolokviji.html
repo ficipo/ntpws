@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upis ocjena I. i II. kolokvija</h2>
+
+<form action="" method="get">
+  <label for="kolokvij1">Ocjena I. kolokvija:</label><br>
+  <input type="number" id="kolokvij1" name="I.ocjena" ><br>
+  <label for="kolokvij2">Ocjena II. kolokvija:</label><br>
+  <input type="number" id="kolokvij2" name="II.ocjena"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+<?php
+ 
+$prvaOcjena=$_GET["I.ocjena"];
+$drugaOcjena=$_GET["II.ocjena"];
+
+if(($prvaOcjena<1 or $prvaOcjena>5) or ($drugaOcjena<1 or $drugaOcjena>5) ) {
+	echo "<p style='background-color:#FFCCCC'><b>ERROR: </b>Invalid input</p><br>";
+}else if($prvaOcjena==1 || $drugaOcjena==1){
+	echo "Zavrsna ocjena: 1";
+}else{
+	$zavrsna=($prvaOcjena+$drugaOcjena)/2;
+	echo "Zavrsna ocjena:" . $zavrsna;
+}
+
+?>
+
+
+
+</body>
+</html>
+
